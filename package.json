@@ -1,0 +1,22 @@
+{
+  "name": "letscode-websocket-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ioredis": "^5.4.2",
+    "nodemon": "^3.1.9",
+    "redis": "^4.7.0",
+    "socket.io": "^4.8.1"
+  }
+}
