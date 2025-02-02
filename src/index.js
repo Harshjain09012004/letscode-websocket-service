@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
     cors : {
-        origin : ['http://localhost:5500'],
+        origin : ['http://localhost:5500', 'http://localhost:5173', 'http://localhost:5000'],
         methods : ['GET', 'POST'],
     }
 });
@@ -33,6 +33,8 @@ io.on('connection', (socket)=>{
         socket.emit('SocketId', data);
        });
     });
+    socket.emit('message', "Hi");
+    socket.emit('message', "Hello");
 });
 
 app.locals.io = io;

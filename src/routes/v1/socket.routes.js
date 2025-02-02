@@ -5,7 +5,7 @@ socketRouter.post('/', async (req, res)=>{
     const io = req.app.locals.io;
     const RedisCache = req.app.locals.RedisCache;
     
-    const {userId, status} = req.body;
+    const {userId, status, data, error} = req.body;
     if(!userId){
         res.status(400).send("Invalid request");
     }
@@ -13,7 +13,7 @@ socketRouter.post('/', async (req, res)=>{
     const socketId = await RedisCache.get(userId);
 
     if(socketId){
-        io.to(socketId).emit('message', status);
+        io.to(socketId).emit('message', {status, data, error});
         res.send("Status Updated");
     }
     else{
