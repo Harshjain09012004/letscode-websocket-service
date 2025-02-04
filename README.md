@@ -45,6 +45,3 @@ http://localhost:PORT
 
 ## Contributing
 Feel free to fork and contribute via pull requests.
-
-## License
-This project is licensed under the MIT License.
